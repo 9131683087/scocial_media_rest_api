@@ -3,7 +3,7 @@ import express from 'express';
 import userRouter from './src/feature/users/user.routes.js'; // Adjust the path as necessary
 import postRouter from "./src/feature/post/post.routes.js";
 import commentRouter from "./src/feature/comment/comment.routes.js";
-
+import likerouter from "./src/feature/like/like.routes.js";
 // Load environment variables
 dotenv.config();
 
@@ -19,5 +19,7 @@ app.use('/api/post', postRouter);
 
 // Use commentRouter for /api/comments routes
 app.use('/api/comments', commentRouter); // Ensure the path is correctly set
+
+app.use('/api/like', likerouter);
 
 export default app;
